@@ -1,5 +1,5 @@
 variable "gcp_project_id" {
-  default = "relaycorp-cloud-pong"
+  default = "relaycorp-cloud-ping"
 }
 variable "gcp_service_account_id" {}
 
