@@ -24,6 +24,12 @@ resource "google_project_service" "container" {
   disable_dependent_services = true
 }
 
+resource "google_project_service" "redis" {
+  project                    = var.gcp_project_id
+  service                    = "redis.googleapis.com"
+  disable_dependent_services = true
+}
+
 resource "google_project_service" "cloudkms" {
   project                    = var.gcp_project_id
   service                    = "cloudkms.googleapis.com"
