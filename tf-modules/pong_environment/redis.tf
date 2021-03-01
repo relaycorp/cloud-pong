@@ -6,6 +6,8 @@ resource "google_compute_global_address" "redis" {
   network       = google_compute_network.main.id
 
   labels = local.gcp_resource_labels
+
+  provider = google-beta
 }
 
 resource "google_service_networking_connection" "redis" {
@@ -26,6 +28,8 @@ resource "google_redis_instance" "main" {
 
   redis_version = "REDIS_4_0"
   display_name  = "Terraform Test Instance"
+
+  labels = local.gcp_resource_labels
 
   depends_on = [google_service_networking_connection.redis]
 }
