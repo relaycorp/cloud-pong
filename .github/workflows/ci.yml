@@ -1,0 +1,25 @@
+name: "Continuous Integration"
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Terraform
+        uses: volcano-coffee-company/setup-terraform@v1
+        with:
+          version: '~0.14.5'
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      - name: Validate Terraform configuration
+        run: |
+          terraform fmt -check -recursive
+          cd tf-workspace
+          terraform init -backend=false
+          terraform validate
