@@ -1,0 +1,52 @@
+# See: https://www.vaultproject.io/docs/platform/k8s/helm/configuration
+
+global:
+  enabled: true
+
+server:
+  extraArgs: -config=/vault/userconfig/vault-config/partial-vault.hcl
+
+  extraEnvironmentVars:
+    GOOGLE_REGION: {{ requiredEnv "CLOUDSDK_COMPUTE_REGION" | quote }}
+    GOOGLE_PROJECT: {{ requiredEnv "CLOUDSDK_CORE_PROJECT" | quote }}
+    GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/vault-cd/service_account_key.json
+
+  extraVolumes:
+    - type: secret
+      name: vault-cd
+    - type: configMap
+      name: vault-config
+
+  ha:
+    enabled: true
+
+    # Replicas MUST NOT be greater than the number of nodes per the default affinity configuration.
+    replicas: 3
+
+    config: |
+      ui = true
+
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+
+  resources:
+    requests:
+      cpu: 150m
+      memory: 100Mi
+    limits:
+      cpu: 200m
+      memory: 200Mi
+
+injector:
+  image:
+    tag: 0.6.0
+  resources:
+    requests:
+      cpu: 10m
+      memory: 10Mi
+    limits:
+      cpu: 20m
+      memory: 20Mi

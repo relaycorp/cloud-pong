@@ -1,0 +1,30 @@
+fullnameOverride: pong
+
+publicAddress: {{  requiredEnv "GW_PUBLIC_ADDRESS" | quote }}
+gatewayKeyId: {{ requiredEnv "GW_KEY_ID_B64" | quote }}
+
+logging:
+  level: debug
+  target: gcp
+  envName: {{ requiredEnv "ENVIRONMENT_NAME" }}-gateway
+
+proxyRequestIdHeader: X-Cloud-Trace-Context
+
+ingress:
+  enabled: true
+  apiVersion: networking.k8s.io/v1beta1
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.global-static-ip-name: {{ requiredEnv "GW_GLOBAL_IP_NAME" | quote }}
+    networking.gke.io/managed-certificates: {{ requiredEnv "GW_MANAGED_CERT_NAME" | quote }}
+
+service:
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+  type: NodePort
+
+# Backing services
+
+vault:
+  serverUrl: http://vault:8200
+  token: {{ readFile "/workspace/secrets/vault-root-token" | quote }}
