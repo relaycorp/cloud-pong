@@ -62,10 +62,6 @@ resource "google_container_node_pool" "main" {
       disable-legacy-endpoints = "true"
     }
 
-    workload_metadata_config {
-      node_metadata = "GKE_METADATA_SERVER"
-    }
-
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
