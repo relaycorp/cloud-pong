@@ -21,7 +21,7 @@ resource "google_redis_instance" "main" {
   tier           = "BASIC"
   memory_size_gb = 1
 
-  region = var.gcp_region
+  region      = var.gcp_region
   location_id = local.gcp_zone
 
   authorized_network = google_compute_network.main.id
