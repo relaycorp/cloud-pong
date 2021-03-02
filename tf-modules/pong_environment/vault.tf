@@ -78,6 +78,13 @@ resource "google_storage_bucket_iam_member" "vault_storage" {
   member = "serviceAccount:${google_service_account.vault.email}"
 }
 
+// TODO: Remove. Only needed to remove objects after a failed `vault init`.
+resource "google_storage_bucket_iam_member" "vault_storage_sre" {
+  bucket = google_storage_bucket.vault.name
+  role   = "roles/storage.objectAdmin"
+  member = var.sre_iam_uri
+}
+
 module "vault_sa_private_key" {
   source = "../cd_secret"
 
