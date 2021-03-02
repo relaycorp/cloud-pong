@@ -63,6 +63,8 @@ keybase_encrypt() {
   local recipient_email_address="$(
     gpg --list-keys | grep --only-matching --extended-regexp '([^@<]+@[^>]+)'
   )"
+  echo "${public_key_url}" >&2
+  echo "${recipient_email_address}" >&2
   gpg --recipient "${recipient_email_address}" --encrypt --armor --batch --always-trust
 }
 
