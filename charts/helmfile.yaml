@@ -1,0 +1,49 @@
+repositories:
+  - name: hashicorp
+    url: https://helm.releases.hashicorp.com
+  - name: relaycorp
+    url: https://h.cfcr.io/relaycorp/public
+
+helmDefaults:
+  wait: true
+
+releases:
+  - name: vault
+    chart: hashicorp/vault
+    version: 0.8.0
+    values:
+      - vault/values.yml.gotmpl
+    hooks:
+      - events: [presync]
+        showlogs: true
+        command: vault/pre-install.sh
+        args:
+          - "{{`{{.Release.Name}}`}}"
+          - "default"
+      - events: [postsync]
+        showlogs: true
+        command: vault/post-install.sh
+        args:
+          - {{ requiredEnv "VAULT_KEYBASE_USERNAME" | quote }}
+          - {{ requiredEnv "VAULT_KV_PREFIX" | quote }}
+          - {{ requiredEnv "VAULT_GCS_BUCKET" | quote }}
+          - "{{`{{.Release.Name}}`}}"
+          - {{ requiredEnv "VAULT_ROOT_TOKEN_SECRET_ID" | quote }}
+    labels:
+      tier: backingService
+
+#  - name: pong-crds
+#    chart: ./pong-crds
+#    values:
+#      - pong-crds/values.yml.gotmpl
+#
+#  - name: pong
+#    chart: relaycorp/relaynet-pong
+#    version: "{{ .Values.pongVersion }}"
+#    values:
+#      - pong/values.yml.gotmpl
+
+environments:
+  default:
+    values:
+      - values.yml
