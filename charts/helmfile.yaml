@@ -32,16 +32,16 @@ releases:
     labels:
       tier: backingService
 
-#  - name: pong-crds
-#    chart: ./pong-crds
-#    values:
-#      - pong-crds/values.yml.gotmpl
-#
-#  - name: pong
-#    chart: relaycorp/relaynet-pong
-#    version: "{{ .Values.pongVersion }}"
-#    values:
-#      - pong/values.yml.gotmpl
+  - name: pong-crds
+    chart: ./pong-crds
+    values:
+      - pong-crds/values.yml.gotmpl
+
+  - name: pong
+    chart: relaycorp/relaynet-pong
+    version: "{{ .Values.pongVersion }}"
+    values:
+      - pong/values.yml.gotmpl
 
 environments:
   default:
