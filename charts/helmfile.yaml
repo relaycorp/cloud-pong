@@ -37,17 +37,8 @@ releases:
     values:
       - pong-crds/values.yml.gotmpl
 
-  - name: gateway
-    chart: relaycorp/relaynet-internet-gateway
-    version: "{{ .Values.gatewayVersion }}"
+  - name: pong
+    chart: relaycorp/relaynet-pong
+    version: "{{ .Values.pongVersion }}"
     values:
-      - gateway/values.yml.gotmpl
-
-environments:
-  production:
-    values:
-      - values.yml
-  testing:
-    values:
-      - values.yml
-      - values-testing.yml
+      - pong/values.yml.gotmpl

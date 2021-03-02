@@ -5,4 +5,4 @@ This directory contains the Helm chart configuration for each Kubernetes-based s
 We currently manage the following services in Kubernetes:
 
 - [Hashicorp Vault](./vault).
-- [Relaynet Pong](./gateway) and [its CRDs](pong-crds).
+- [Relaynet Pong](pong) and [its CRDs](pong-crds).

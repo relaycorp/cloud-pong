@@ -1,7 +1,5 @@
 gcpProjectId: {{ requiredEnv "CLOUDSDK_CORE_PROJECT" | quote }}
 managedCertificate:
-  name: {{ requiredEnv "GW_MANAGED_CERT_NAME" | quote }}
+  name: {{ requiredEnv "PONG_MANAGED_CERT_NAME" | quote }}
   domains:
-    - {{ requiredEnv "GW_POWEB_DOMAIN" | quote }}
-    - {{ requiredEnv "GW_POHTTP_DOMAIN" | quote }}
-    - {{ requiredEnv "GW_COGRPC_DOMAIN" | quote }}
+    - {{ requiredEnv "PONG_POHTTP_HOST_NAME" | quote }}
