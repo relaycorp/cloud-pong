@@ -42,8 +42,8 @@ releases:
 #    version: "{{ .Values.pongVersion }}"
 #    values:
 #      - pong/values.yml.gotmpl
-#
-#environments:
-#  default:
-#    values:
-#      - values.yml
+
+environments:
+  default:
+    values:
+      - values.yml
