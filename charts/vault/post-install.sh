@@ -28,9 +28,8 @@ initialise_vault() {
   vault operator init \
     -format=json \
     -recovery-shares="${RECOVERY_SHARES}" \
-    -recovery-threshold="${RECOVERY_THRESHOLD}"
-# TODO: See https://github.com/relaycorp/cloud-pong/issues/3
-#    -recovery-pgp-keys="keybase:${KEYBASE_USERNAME},keybase:${KEYBASE_USERNAME},keybase:${KEYBASE_USERNAME}"
+    -recovery-threshold="${RECOVERY_THRESHOLD}" \
+    -recovery-pgp-keys="keybase:${KEYBASE_USERNAME},keybase:${KEYBASE_USERNAME},keybase:${KEYBASE_USERNAME}"
 }
 
 wait_for_vault_unseal() {
