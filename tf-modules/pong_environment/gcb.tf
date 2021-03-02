@@ -24,9 +24,11 @@ locals {
       "VAULT_KV_PREFIX=${local.vault.kv_prefix}",
       "VAULT_ROOT_TOKEN_SECRET_ID=${google_secret_manager_secret.vault_root_token.secret_id}",
 
-      "PONG_KEY_ID_B64=${random_id.pong_key_id.b64_std}",
+      "PONG_PUBLIC_ENDPOINT_ADDRESS=${var.public_address}",
+      "PONG_POHTTP_HOST_NAME=${var.pohttp_host_name}",
       "PONG_GLOBAL_IP_NAME=${google_compute_global_address.managed_tls_cert.name}",
       "PONG_MANAGED_CERT_NAME=${local.env_full_name}",
+      "PONG_KEY_ID_B64=${random_id.pong_key_id.b64_std}",
     ]
   }
 }
@@ -57,10 +59,11 @@ resource "google_cloudbuild_trigger" "gke_deployment" {
         "clusters",
         "get-credentials",
         google_container_cluster.main.name,
+        "--zone",
+        local.gcp_zone,
       ]
       env = [
         "CLOUDSDK_CORE_PROJECT=${var.gcp_project_id}",
-        "CLOUDSDK_COMPUTE_REGION=${var.gcp_region}",
       ]
     }
 
@@ -137,10 +140,11 @@ resource "google_cloudbuild_trigger" "gke_deployment_preview" {
         "clusters",
         "get-credentials",
         google_container_cluster.main.name,
+        "--zone",
+        local.gcp_zone,
       ]
       env = [
         "CLOUDSDK_CORE_PROJECT=${var.gcp_project_id}",
-        "CLOUDSDK_COMPUTE_REGION=${var.gcp_region}",
       ]
     }
 
