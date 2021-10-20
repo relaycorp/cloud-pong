@@ -29,7 +29,7 @@ locals {
       "PONG_GLOBAL_IP_NAME=${google_compute_global_address.managed_tls_cert.name}",
       "PONG_MANAGED_CERT_NAME=${local.env_full_name}",
       "PONG_KEY_ID_B64=${random_id.pong_key_id.b64_std}",
-      "PONG_SESSION_KEY_ID_B64=${random_id.pong_key_id.b64_std}",
+      "PONG_SESSION_KEY_ID_B64=${random_id.pong_session_key_id.b64_std}",
     ]
   }
 }
