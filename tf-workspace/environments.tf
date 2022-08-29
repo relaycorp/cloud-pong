@@ -4,7 +4,7 @@ module "env_main" {
   name = "main"
 
   pohttp_host_name = "pong-pohttp.awala.services"
-  internet_address   = "ping.awala.services"
+  internet_address = "ping.awala.services"
 
   gcp_project_id = var.gcp_project_id
   gcp_region     = "europe-west2"
