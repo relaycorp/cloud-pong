@@ -24,7 +24,7 @@ locals {
       "VAULT_KV_PREFIX=${local.vault.kv_prefix}",
       "VAULT_ROOT_TOKEN_SECRET_ID=${google_secret_manager_secret.vault_root_token.secret_id}",
 
-      "PONG_PUBLIC_ENDPOINT_ADDRESS=${var.public_address}",
+      "PONG_INTERNET_ADDRESS=${var.internet_address}",
       "PONG_POHTTP_HOST_NAME=${var.pohttp_host_name}",
       "PONG_GLOBAL_IP_NAME=${google_compute_global_address.managed_tls_cert.name}",
       "PONG_MANAGED_CERT_NAME=${local.env_full_name}",

@@ -1,7 +1,7 @@
 variable "name" {}
 
 variable "pohttp_host_name" {}
-variable "public_address" {}
+variable "internet_address" {}
 
 variable "gcp_project_id" {}
 variable "gcp_region" {}
