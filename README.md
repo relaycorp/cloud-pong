@@ -10,5 +10,5 @@ The Kubernetes resources are defined in Helm charts ([`charts/`](./charts)), whi
 
 We currently operate a single instance:
 
-- Public endpoint address: `ping.awala.services`
+- Internet address: `ping.awala.services`
 - PoHTTP URL: `https://pong-pohttp.awala.services`
