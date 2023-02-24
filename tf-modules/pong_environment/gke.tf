@@ -56,6 +56,7 @@ resource "google_container_node_pool" "main" {
 
   node_config {
     machine_type = var.gke_instance_type
+    image_type   = "COS_CONTAINERD"
     disk_size_gb = 10
 
     metadata = {
