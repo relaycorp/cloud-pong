@@ -52,12 +52,11 @@ resource "google_container_node_pool" "main" {
   cluster    = google_container_cluster.main.name
   node_count = 1
 
-  image_type = "COS_CONTAINERD"
-
   version = google_container_cluster.main.master_version
 
   node_config {
     machine_type = var.gke_instance_type
+    image_type   = "COS_CONTAINERD"
     disk_size_gb = 10
 
     metadata = {
