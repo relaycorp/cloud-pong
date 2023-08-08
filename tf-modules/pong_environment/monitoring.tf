@@ -1,20 +1,28 @@
 resource "google_project_iam_binding" "monitoring_admin_sre" {
+  project = var.gcp_project_id
+
   // TODO: Remove
   role    = "roles/monitoring.admin"
   members = [var.sre_iam_uri]
 }
 
 resource "google_project_iam_binding" "monitoring_viewer_sre" {
+  project = var.gcp_project_id
+
   role    = "roles/monitoring.viewer"
   members = [var.sre_iam_uri]
 }
 
 resource "google_project_iam_binding" "dashboard_viewer_sre" {
+  project = var.gcp_project_id
+
   role    = "roles/monitoring.dashboardViewer"
   members = [var.sre_iam_uri]
 }
 
 resource "google_project_iam_binding" "error_reporting_sre_access" {
+  project = var.gcp_project_id
+
   role    = "roles/errorreporting.user"
   members = [var.sre_iam_uri]
 }

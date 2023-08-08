@@ -18,7 +18,7 @@ resource "google_service_account_key" "vault" {
 
 resource "google_kms_crypto_key" "vault_auto_unseal" {
   name            = "vault-auto-unseal"
-  key_ring        = google_kms_key_ring.main.self_link
+  key_ring        = google_kms_key_ring.main.id
   rotation_period = "100000s"
 
   lifecycle {
@@ -37,6 +37,8 @@ resource "google_project_iam_custom_role" "vault_auto_unseal" {
 }
 
 resource "google_project_iam_binding" "vault_auto_unseal" {
+  project = var.gcp_project_id
+
   role = google_project_iam_custom_role.vault_auto_unseal.id
 
   members = [

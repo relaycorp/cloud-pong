@@ -9,4 +9,4 @@ jobs:
     uses: relaycorp/shared-workflows/.github/workflows/tfmodule-ci.yml@main
     with:
       path: tf-workspace
-      terraform_version: 0.14.5
+      terraform_version: 1.5.3
