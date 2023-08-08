@@ -22,9 +22,6 @@ resource "google_container_cluster" "main" {
   }
 
   master_auth {
-    username = ""
-    password = ""
-
     client_certificate_config {
       issue_client_certificate = false
     }
@@ -125,6 +122,8 @@ resource "google_project_iam_custom_role" "gke_limited_admin" {
 }
 
 resource "google_project_iam_binding" "gke_limited_admin" {
+  project = var.gcp_project_id
+
   role = google_project_iam_custom_role.gke_limited_admin.id
 
   members = ["serviceAccount:${local.gcb_service_account_email}"]

@@ -6,6 +6,8 @@ locals {
 }
 
 resource "google_project_iam_member" "gcb_editor" {
+  project = var.gcp_project_id
+
   // Grants SREs permission to start and cancel builds
   role   = "roles/cloudbuild.builds.editor"
   member = var.sre_iam_uri
