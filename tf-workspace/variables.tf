@@ -10,15 +10,19 @@ variable "mongodb_atlas_project_id" {}
 variable "mongodb_atlas_region" {
   default = "WESTERN_EUROPE" # Belgium
 }
-
-variable "backend_name" {
-  default = "pong"
-}
 variable "internet_address" {
   default = "ping.awala.services"
 }
 variable "pohttp_server_domain" {
   default = "pong-pohttp.awala.services"
+}
+
+variable "pong_instance_name" {
+  default = "pong"
+}
+variable "pong_version" {
+  default     = "4.0.4"
+  description = "Docker image tag for Awala Pong"
 }
 
 variable "sre_iam_uri" {

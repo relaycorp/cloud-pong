@@ -1,7 +1,3 @@
-locals {
-  awala_pong_version = "4.0.2"
-}
-
 resource "google_service_account" "pong" {
   project = var.gcp_project_id
 
@@ -27,7 +23,7 @@ resource "google_cloud_run_v2_service" "pong" {
 
     containers {
       name  = "pong"
-      image = "relaycorp/awala-pong:${local.awala_pong_version}"
+      image = "relaycorp/awala-pong:${var.pong_version}"
 
       env {
         name  = "VERSION"

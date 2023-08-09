@@ -6,7 +6,7 @@ module "endpoint" {
   source  = "relaycorp/awala-endpoint/google"
   version = "1.8.2"
 
-  backend_name     = var.backend_name
+  backend_name     = var.pong_instance_name
   internet_address = var.internet_address
 
   project_id = var.gcp_project_id
