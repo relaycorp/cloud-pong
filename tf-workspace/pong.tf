@@ -27,7 +27,7 @@ resource "google_cloud_run_v2_service" "pong" {
 
       env {
         name  = "VERSION"
-        value = local.awala_pong_version
+        value = var.pong_version
       }
 
       env {
