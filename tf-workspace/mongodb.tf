@@ -1,5 +1,5 @@
 locals {
-  mongodb_uri     = "${mongodbatlas_serverless_instance.main.connection_strings_standard_srv}/?retryWrites=true&w=majority"
+  mongodb_uri = "${mongodbatlas_serverless_instance.main.connection_strings_standard_srv}/?retryWrites=true&w=majority"
 }
 
 resource "mongodbatlas_serverless_instance" "main" {

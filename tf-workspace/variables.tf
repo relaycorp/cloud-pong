@@ -2,7 +2,7 @@ variable "gcp_project_id" {
   default = "relaycorp-cloud-ping"
 }
 variable "gcp_region" {
-    default = "europe-west1" # Belgium
+  default = "europe-west1" # Belgium
 }
 variable "gcp_service_account_id" {}
 
