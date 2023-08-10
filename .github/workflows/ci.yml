@@ -8,5 +8,4 @@ jobs:
   ci:
     uses: relaycorp/shared-workflows/.github/workflows/tfmodule-ci.yml@main
     with:
-      path: tf-workspace
       terraform_version: 1.5.3
