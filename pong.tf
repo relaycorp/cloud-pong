@@ -92,3 +92,12 @@ resource "google_cloud_run_v2_service" "pong" {
     }
   }
 }
+
+resource "google_cloud_run_v2_job_iam_binding" "endpoint_bootstrap_invoker" {
+  project = var.gcp_project_id
+
+  location = var.gcp_region
+  name     = module.endpoint.bootstrap_job_name
+  role     = "roles/run.invoker"
+  members  = [var.sre_iam_uri]
+}
