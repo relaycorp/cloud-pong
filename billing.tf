@@ -22,7 +22,7 @@ resource "google_billing_budget" "main" {
   }
 
   all_updates_rule {
-    monitoring_notification_channels = [for channel in google_monitoring_notification_channel.sres_email: channel.name]
+    monitoring_notification_channels = [for channel in google_monitoring_notification_channel.sres_email : channel.name]
     disable_default_iam_recipients   = true
   }
 }
