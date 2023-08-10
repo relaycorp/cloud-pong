@@ -30,4 +30,6 @@ resource "time_sleep" "wait_for_services" {
   create_duration = "30s"
 }
 
-data "google_project" "current" {}
+data "google_project" "main" {
+  project_id = var.gcp_project_id
+}
