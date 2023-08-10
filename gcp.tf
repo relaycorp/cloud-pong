@@ -13,6 +13,7 @@ locals {
     "pubsub.googleapis.com",
     "secretmanager.googleapis.com",
     "iam.googleapis.com",
+    "container.googleapis.com", # TODO: REMOVE
     "servicenetworking.googleapis.com", # TODO: REMOVE
   ]
 }
