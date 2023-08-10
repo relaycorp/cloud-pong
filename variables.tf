@@ -5,6 +5,7 @@ variable "gcp_region" {
   default = "europe-west1" # Belgium
 }
 variable "gcp_service_account_id" {}
+variable "gcp_billing_account_id" {}
 
 variable "mongodb_atlas_project_id" {}
 variable "mongodb_atlas_region" {
@@ -27,4 +28,8 @@ variable "pong_version" {
 
 variable "sre_iam_uri" {
   description = "GCP IAM URI for an SRE or the SRE group (e.g., 'group:sre-team@acme.com')"
+}
+variable "sre_email_addresses" {
+  description = "Email address for each SRE at Relaycorp"
+  type        = list(string)
 }
