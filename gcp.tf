@@ -5,14 +5,6 @@ resource "google_project_iam_member" "project_viewer" {
   member = var.sre_iam_uri
 }
 
-# TODO: Remove
-resource "google_project_iam_member" "kms_deleter" {
-  project = var.gcp_project_id
-
-  role   = "roles/cloudkms.admin"
-  member = var.sre_iam_uri
-}
-
 locals {
   services = [
     "run.googleapis.com",
