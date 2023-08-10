@@ -28,7 +28,3 @@ variable "pong_version" {
 variable "sre_iam_uri" {
   description = "GCP IAM URI for an SRE or the SRE group (e.g., 'group:sre-team@acme.com')"
 }
-variable "sre_email_addresses" {
-  description = "Email address for each SRE at Relaycorp"
-  type        = list(string)
-}
