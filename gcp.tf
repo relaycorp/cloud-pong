@@ -29,3 +29,5 @@ resource "time_sleep" "wait_for_services" {
   depends_on      = [google_project_service.services]
   create_duration = "30s"
 }
+
+data "google_project" "current" {}

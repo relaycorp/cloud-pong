@@ -3,7 +3,7 @@ resource "google_billing_budget" "main" {
   display_name    = "Project budget (managed by Terraform workspace ${terraform.workspace})"
 
   budget_filter {
-    projects = ["projects/${var.gcp_project_id}"]
+    projects = [data.google_project.current.id]
   }
 
   amount {
