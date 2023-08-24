@@ -4,7 +4,6 @@ variable "gcp_project_id" {
 variable "gcp_region" {
   default = "europe-west1" # Belgium
 }
-variable "gcp_service_account_id" {}
 variable "gcp_billing_account_id" {}
 
 variable "mongodb_atlas_project_id" {}
