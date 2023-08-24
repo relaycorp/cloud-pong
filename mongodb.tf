@@ -9,6 +9,8 @@ resource "mongodbatlas_serverless_instance" "main" {
   provider_settings_backing_provider_name = "GCP"
   provider_settings_provider_name         = "SERVERLESS"
   provider_settings_region_name           = var.mongodb_atlas_region
+
+  termination_protection_enabled = true
 }
 
 resource "mongodbatlas_project_ip_access_list" "main" {
