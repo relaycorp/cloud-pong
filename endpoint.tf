@@ -4,7 +4,7 @@ locals {
 
 module "endpoint" {
   source  = "relaycorp/awala-endpoint/google"
-  version = "1.8.2"
+  version = "1.8.9"
 
   backend_name     = var.pong_instance_name
   internet_address = var.internet_address
