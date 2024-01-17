@@ -6,6 +6,8 @@ module "endpoint" {
   source  = "relaycorp/awala-endpoint/google"
   version = "1.8.9"
 
+  docker_image_tag = "1.8.5"
+
   backend_name     = var.pong_instance_name
   internet_address = var.internet_address
 
