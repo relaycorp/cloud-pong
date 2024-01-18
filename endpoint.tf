@@ -1,5 +1,5 @@
 locals {
-  mongodb_endpoint_db_name = "main"
+  mongodb_endpoint_db_name = "endpoint"
 }
 
 module "endpoint" {
