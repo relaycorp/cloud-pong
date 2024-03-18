@@ -4,7 +4,7 @@ locals {
 
 module "endpoint" {
   source  = "relaycorp/awala-endpoint/google"
-  version = "1.8.27"
+  version = "1.8.35"
 
   docker_image_tag = "1.8.19"
 
