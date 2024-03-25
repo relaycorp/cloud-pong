@@ -6,7 +6,7 @@ terraform {
     }
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = "~> 4.75.0"
+      version = "~> 5.21.0"
     }
     mongodbatlas = {
       source  = "mongodb/mongodbatlas"
