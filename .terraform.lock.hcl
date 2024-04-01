@@ -2,21 +2,21 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/google" {
-  version     = "4.75.1"
-  constraints = "~> 4.75.0"
+  version     = "5.22.0"
+  constraints = ">= 4.50.0, >= 4.75.0, ~> 5.22.0, < 6.0.0"
   hashes = [
-    "h1:L894XTxJTQhxwmNDUl9dn/mUYJeufkLfIqyHkeChZ6M=",
-    "zh:0af82b4bea9040b31e8d251e9da054413c3a03c437648f62e9fdcd0059841666",
-    "zh:35c293bd8d0d91d3299dc9d2b8c6a8f7e52047b0879231857ce9ebe14b7ca625",
-    "zh:4a16bf038b6df7ba1a8857e42c3ecb14c55ecc8f21b88bfe82afc70428b43cc0",
-    "zh:6be1be3f512557e4db4a92f79d1bcf0bd5a2d957d9f7f229df68438c37c8d7a7",
-    "zh:8beb954557ca5a048bcd8c06e427746bad18f79bbbe6da6b93ba24d6be129eb3",
-    "zh:9c6d5260edcec736e1d63dd8e2856f7e2c07e77e3495388f84c7cfcba4ea67c5",
-    "zh:b005d621e6f4055baa5f30fab64efc797961db46a89fd1b8bc137aa3469486d6",
-    "zh:b75efa960fd68abab91a1925030a91dce4b1f74b3a47db2f7d5744539c3e5497",
-    "zh:caee012bc0349e3e981fc395546f8778faea39e5ef89572cda9f86304b8726bd",
-    "zh:cbc7a3d3e227ff588c935f9d8d0b1b98a4cbecac69aacc783eb26bbeb967b498",
-    "zh:ec9453aef29cf39a6310c6ae7a7b1cca17f67c4d7e82a4a85198829da590074f",
+    "h1:zofkDA/M6eZUxcKo7GT2VW/EbddlpYrcxaeapDmJqaw=",
+    "zh:12fce1e8b7d4cfb150142185ce99165ca3854526f7d826106ec09ba77ef9bab1",
+    "zh:1ecaff54cf7fecc41d89b130a066e903fd1353a1a476c816ad2b2013b1664776",
+    "zh:294091d1d0b87b99f9bdfdd42eae769fa44930680a3cefff0ff2f43741fefa53",
+    "zh:373e7a4127c7fef671a226764bb5f5ebc94823b19f65d8e2370b4c75e43eb2b3",
+    "zh:7121c14b7a59b07386d09e9ca19160a453680c32708f1132e904d56f8c697a65",
+    "zh:7d8316fec69a284dae43b3f107798e62478b8d1de9b3197e45b49e99b14bfc27",
+    "zh:8186df47dcbf112dfd54e3310056a955c422277ccbe369f6074f8c65ecb724dc",
+    "zh:967dc4f14fb1ad1673befd3e40a181a0bf18cb212822cab1dc9f8b44235fc766",
+    "zh:9dac1ec8aa80c49189e2dd59ce338c14330da685782fcb261e62c2b2d1b90e26",
+    "zh:c309f86d35945c02ed2fdb71348cd03fc99a6aaeedfad035b01bad78222e3eda",
+    "zh:eb46d32b5fa33d8fa7e2cded4ea5b815d66a202754a7afc8ad7c93aa08d13919",
     "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
   ]
 }
