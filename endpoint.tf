@@ -14,7 +14,10 @@ module "endpoint" {
   project_id = var.gcp_project_id
   region     = var.gcp_region
 
-  pohttp_server_domain = var.pohttp_server_domain
+  pohttp_client_min_instance_count = 0
+
+  pohttp_server_domain             = var.pohttp_server_domain
+  pohttp_server_min_instance_count = 0
 
   mongodb_uri      = local.mongodb_uri
   mongodb_db       = local.mongodb_endpoint_db_name
